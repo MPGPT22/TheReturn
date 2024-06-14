@@ -3,10 +3,12 @@ name: Deploy
 on:
   push:
     branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   laravel-tests:
-    name: crete deployment
+
     runs-on: ubuntu-latest
 
     steps:
