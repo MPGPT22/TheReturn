@@ -6,7 +6,7 @@ on:
 
 jobs:
   laravel-tests:
-
+    name: crete deployment
     runs-on: ubuntu-latest
 
     steps:
