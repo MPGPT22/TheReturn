@@ -29,12 +29,12 @@
 
             <div class="row padding-bot-2 animated fadeIn">
 
-              <!-- @if (count($characters) == 0 && count($spells) == 0 && count($skills) == 0 && count($states) == 0 && count($armors) == 0 && count($items) == 0 && count($weapons) == 0) -->
+              @if (count($characters) == 0 && count($spells) == 0 && count($skills) == 0 && count($states) == 0 && count($armors) == 0 && count($items) == 0 && count($weapons) == 0)
 
                 <div class="col-md-12">
                   <h4 class="lead">Unfortunatly we haven't added any content, please come back later.</h4>
                 </div>
-<!--
+
               @else
 
               @if (count($characters) > 0 )
@@ -42,9 +42,7 @@
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title">@if ($now->diffInDays($character->created_at, false) > -7 )
-                            <span class="label label-success m-r-10 pull-left">NEW</span>
-                          @endif {{$character->type}} - {{$character->name}}</h4>
+
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($character->type == 'Main' or $character->type == 'Secundary' or $character->type == 'Extra' or $character->type == 'Secret')
@@ -64,11 +62,11 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{!!str_limit($character->descriptionInicial, 50) !!}</p>
+                          <p>{!! $character->descriptionInicial !!}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="{{route('characters.show.public',$character->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="{{route('characters.public')}}" class="btn btn-primary btn-50 btn-colormode">Characters List</a>
+                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="" class="btn btn-primary btn-50 btn-colormode">Characters List</a>
                           </div>
                         </div>
                       </div>
@@ -77,13 +75,11 @@
                 @endforeach
               @endif
 
-              @if (count($skills) > 0 )
+             
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title">@if ($now->diffInDays($skills->created_at, false) > -7 )
-                            <span class="label label-success m-r-10 pull-left">NEW</span>
-                          @endif {{$skills->name}}</h4>
+
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($skills->element == 'Physical')
@@ -107,25 +103,23 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{!!str_limit($skills->descriptionInicial, 50)!!}</p>
+                          <p>{!! $skills->descriptionInicial !!}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="{{route('skills.show.public',$skills->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="{{route('skills.public')}}" class="btn btn-primary btn-50 btn-colormode">Skill List</a>
+                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="" class="btn btn-primary btn-50 btn-colormode">Skill List</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-              @endif
+              
 
-              @if (count($spells) > 0 )
+              
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title">@if ($now->diffInDays($spells->created_at, false) > -7 )
-                            <span class="label label-success m-r-10 pull-left">NEW</span>
-                          @endif {{$spells->name}}</h4>
+
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($spells->element == 'Physical')
@@ -149,25 +143,22 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{!!str_limit($spells->descriptionInicial, 50)!!}</p>
+                          <p>{!! $spells->descriptionInicial !!}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="{{route('spells.show.public',$spells->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="{{route('spells.public')}}" class="btn btn-primary btn-50 btn-colormode">Spell List</a>
+                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="" class="btn btn-primary btn-50 btn-colormode">Spell List</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-              @endif
+              
 
-              @if (count($states) > 0 )
+              
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title">@if ($now->diffInDays($states->created_at, false) > -7 )
-                            <span class="label label-success m-r-10 pull-left">NEW</span>
-                          @endif {{$states->name}}</h4>
                       </div>
                       <div class="panel-body alignThisCenter">
                           <i class="ra ra-level-three-advanced ra-5x"></i>
@@ -175,25 +166,23 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{!!str_limit($states->descriptionInicial, 50)!!}</p>
+                          <p></p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="{{route('states.show.public', $states->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="{{route('states.public')}}" class="btn btn-primary btn-50 btn-colormode">States List</a>
+                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="" class="btn btn-primary btn-50 btn-colormode">States List</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-              @endif
+              
 
-              @if (count($weapons) > 0 )
+              
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title">@if ($now->diffInDays($weapons->created_at, false) > -7 )
-                            <span class="label label-success m-r-10 pull-left">NEW</span>
-                          @endif {{$weapons->name}}</h4>
+                        
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($weapons->type == 'Dagger')
@@ -225,25 +214,23 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{!!str_limit($weapons->descriptionInicial, 50)!!}</p>
+                          <p>{!! $weapons->descriptionInicial !!}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="{{route('weapons.show.public',$weapons->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="{{route('weapons.public')}}" class="btn btn-primary btn-50 btn-colormode">Weapon List</a>
+                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="" class="btn btn-primary btn-50 btn-colormode">Weapon List</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-              @endif
+              
 
-              @if (count($armors) > 0 )
+              
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title">@if ($now->diffInDays($armors->created_at, false) > -7 )
-                            <span class="label label-success m-r-10 pull-left">NEW</span>
-                          @endif {{$armors->name}}</h4>
+                        
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($armors->type == 'Small Shield' or $armors->type == 'Large Shield' or $armors->type == 'Accessory')
@@ -267,25 +254,23 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{!!str_limit($armors->descriptionInicial, 50)!!}</p>
+                          <p>{!!$armors->descriptionInicial!!}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="{{route('armors.show.public',$armors->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="{{route('armors.public')}}" class="btn btn-primary btn-50 btn-colormode">Weapon List</a>
+                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="" class="btn btn-primary btn-50 btn-colormode">Weapon List</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-              @endif
+              
 
-              @if (count($items) > 0 )
+              
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title">@if ($now->diffInDays($items->created_at, false) > -7 )
-                            <span class="label label-success m-r-10 pull-left">NEW</span>
-                          @endif {{$items->name}}</h4>
+                        
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($items->type == 'Regular Item')
@@ -297,22 +282,21 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{!!str_limit($items->descriptionInicial, 50)!!}</p>
+                          
                           <br>
                           <div class="btn-group btn100">
-                            <a href="{{route('items.show.public',$items->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="{{route('items.public')}}" class="btn btn-primary btn-50 btn-colormode">Item List</a>
+                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="" class="btn btn-primary btn-50 btn-colormode">Item List</a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-              @endif
+              
 
 
 
               @endif
--->
 
 
             </div>

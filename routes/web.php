@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\PagesController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/', function () {
-  return view('pages.home');
-})->name('homepage');
+Route::get('/', [PagesController::class, 'index'])->name('homepage');
 Route::get('/characters', function () {
     return view('pages.chars.listPublic');
 })->name('characters.public');
